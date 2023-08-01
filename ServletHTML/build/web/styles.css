@@ -1,0 +1,17 @@
+/* 
+    Created on : 1 ago 2023, 10:34:26
+    Author     : Daniel
+*/
+
+/* Selector para estilizar todos los enlaces */
+a {
+  text-decoration: none;
+  color: #007bff; 
+  margin-bottom: 20px;
+}
+
+/* Estilo cuando el enlace está en estado de hover (cuando el cursor pasa por encima) */
+a:hover {
+  text-decoration: underline;
+  color: #ff0000;
+}
