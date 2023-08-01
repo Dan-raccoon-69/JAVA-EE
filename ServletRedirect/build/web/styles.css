@@ -1,0 +1,22 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 1 ago 2023, 12:39:46
+    Author     : Daniel
+*/
+/* Selector para estilizar todos los enlaces */
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+/* Estilo cuando el enlace está en estado de hover (cuando el cursor pasa por encima) */
+a:hover {
+    text-decoration: underline;
+    color: #ff0000;
+}
