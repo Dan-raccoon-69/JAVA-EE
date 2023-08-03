@@ -1,0 +1,69 @@
+/* 
+    Created on : 3 ago 2023, 13:04:10
+    Author     : Daniel
+*/
+/* Estilos generales para el formulario */
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 380px;
+    margin: auto auto;
+    padding: 20px;
+    background-color: #19274e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para cada grupo de campo y etiqueta */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #536d88;
+    margin: 0;
+    color: #fff;
+}
+
+/* Estilos para el botón */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #b49b85;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #eac195;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+
