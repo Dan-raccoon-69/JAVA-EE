@@ -1,7 +1,14 @@
+<%-- 
+    Document   : detalle
+    Created on : 14 ago 2023, 10:09:17
+    Author     : Daniel
+--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -25,8 +32,8 @@
         <h3 class="text-muted">My Company</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="#">Inicio</a></li>            
-            <li><a href="#">Administración</a></li>                        
+            <li><a href="homePage">Inicio</a></li>            
+            <li><a href="frmvacantes.jsp">Administración</a></li>                        
             <li><a href="#">Acerca</a></li>            
           </ul>
         </nav>
@@ -41,15 +48,15 @@
 
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Numero de la vacante</h3>
+          <h3 class="panel-title"> Numero de Vacante: ${vacante.id}</h3>
         </div>
         <div class="panel-body">
-          <h5><b>Vacante</b>: nombre de la vacante</h5>
-          <h5><b>Publicado</b>: fecha de publicacion</h5>                             
+          <h5><b>Vacante</b>: ${vacante.nombre} </h5>
+          <h5><b>Publicado</b>: ${vacante.fechaPublicacion} </h5>                             
           <b>Descripción:</b><br>
-          <p class="text-justify">descripcion de la vacante</p>
+          <p class="text-justify"> ${vacante.descripcion} </p>
           <b>Detalles de la vacante</b>:<br>
-          aqui van los detalles
+          ${vacante.detalle}
         </div>
       </div>      
       <!-- Site footer -->

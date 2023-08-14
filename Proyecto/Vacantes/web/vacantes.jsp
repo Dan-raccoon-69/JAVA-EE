@@ -1,3 +1,10 @@
+<%-- 
+    Document   : vacantes
+    Created on : 14 ago 2023, 12:02:23
+    Author     : Daniel
+--%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,7 +60,20 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>              
+            <tbody>
+                <c:forEach items="${todas}" var="vacantes" varStatus="status">
+                <tr> 
+                  <td class="left">${vacantes.id}</td>
+                  <td>${vacantes.nombre}</td>
+                  <td>${vacantes.fechaPublicacion}</td>
+                  <td>
+                    <a class="btn btn-default" href="vacante?action=ver&id=${vacantes.id}" role="button">Ver Detalles</a>                                                    
+                    <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
+                  </td> 
+                  
+                </tr>
+                </c:forEach>>
+                 <!--
                 <tr>
                   <td class="left">My id</td>
                   <td>Nombre vacante</td>
@@ -72,15 +92,7 @@
                     <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
                   </td>  
                 </tr>
-                <tr>
-                  <td class="left">My id</td>
-                  <td>Nombre vacante</td>
-                  <td>fecha</td>
-                  <td>
-                    <a class="btn btn-default" href="#" role="button">Ver Detalles</a>                                                    
-                    <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
-                  </td>  
-                </tr>
+                 -->
             </tbody>           
           </table>
         </div>
@@ -95,3 +107,4 @@
 
   </body>
 </html>
+

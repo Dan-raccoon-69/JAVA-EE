@@ -4,11 +4,8 @@
  */
 package controller;
 
-import dao.Dbconexion;
 import dao.VacanteDao;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -23,7 +20,50 @@ import model.Vacantes;
  * @author Daniel
  */
 public class VacanteController extends HttpServlet {
-
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String action = request.getParameter("action");
+        
+        if (action.equals("ver")) {
+           this.verDetalles(request, response);
+        }
+        
+        if (action.equals("vertodas")) {
+           this.verTodasVacantes(request, response);
+        }
+        
+    }
+    
+    protected void verDetalles(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        VacanteDao vac = new VacanteDao();
+        Vacantes vacante = vac.getById(id);
+        
+        RequestDispatcher rd;
+        // compartimos la variable msg, para poder acceder la vista con Expression Language
+        request.setAttribute("vacante", vacante);
+        // enviamos respuesta, se renderiza a la vista "mensaje.jsp"
+        rd = request.getRequestDispatcher("/detalle.jsp");
+        rd.forward(request, response);
+    }
+    
+    protected void verTodasVacantes(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        List<Vacantes> todas = new LinkedList<>();
+        VacanteDao vac = new VacanteDao();
+        todas = vac.obtenerTodasLasVacantes();
+        
+         RequestDispatcher rd;
+        // compartimos la variable ultimas, para poder acceder la vista con Expression Language
+        request.setAttribute("todas", todas);
+        // enviamos respuesta, se renderiza a la vista "index.jsp"
+        rd = request.getRequestDispatcher("/vacantes.jsp");
+        rd.forward(request, response);
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,8 +75,6 @@ public class VacanteController extends HttpServlet {
         vac1.setNombre(nombreParametro);
         vac1.setDescripcion(descripcionParametro);
         vac1.setDetalle(detalleParametro);
-
-        System.out.println(vac1);
 
         VacanteDao vac = new VacanteDao();
         boolean resultado = vac.insertar(vac1);
@@ -53,12 +91,5 @@ public class VacanteController extends HttpServlet {
         // enviamos respuesta, se renderiza a la vista "mensaje.jsp"
         rd = request.getRequestDispatcher("/mensaje.jsp");
         rd.forward(request, response);
-        
-        List<Vacantes> list2 = new LinkedList<>();
-        list2 = vac.obtener3Ultimas();
-        for (Vacantes vacantes : list2) {
-            System.out.println(vacantes);
-        }
     }
-
 }

@@ -4,7 +4,7 @@
     Author     : Daniel
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
   <head>
@@ -44,7 +44,7 @@
           <ul class="nav nav-justified">
             <li><a href="#">Crear Vacante</a></li>            
             <li><a href="#">Vacantes</a></li>                        
-            <li><a href="#">Salir</a></li>            
+            <li><a href="homePage">Salir</a></li>            
           </ul>
         </nav>
       </div>

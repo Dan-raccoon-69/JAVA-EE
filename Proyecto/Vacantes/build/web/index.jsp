@@ -3,12 +3,13 @@
     Created on : 7 ago 2023, 12:13:22
     Author     : Daniel
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">    
+        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
@@ -25,7 +26,6 @@
     <body>
 
         <div class="container">
-
             <!-- The justified navigation menu is meant for single line per list item.
                  Multiple lines will require custom code not provided by Bootstrap. -->
             <div class="masthead">
@@ -58,31 +58,20 @@
                     Es muy fácil de usar, solo haz clic en una vacante, ingresa para ver los detalles y envíanos tu CV en formato 
                     PDF o DOCX. Nosotros revisaremos tu CV y posteriormente te contactaremos.<br><br>
 
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Ver más Ofertas</a></p>                
+                <p><a class="btn btn-lg btn-success" href="vacante?action=vertodas" role="button">Ver más Ofertas</a></p>                
             </div>
 
             <h1>Ofertas recientes</h1>
-
             <!-- Example row of columns -->
-            <div class="row">
+            <div class="row" id="ultimas">
+                <c:forEach items="${ultimas}" var="vacante" varStatus="status">
                 <div class="col-lg-4">
-                    <h2>Safari bug warning!</h2>
-                    <p class="text-danger text-justify">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-                    <p class="text-justify">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+                    <h2>${vacante.id}</h2>
+                    <p class="text-danger text-justify"> ${vacante.nombre} </p>
+                    <p class="text-justify"> ${vacante.fechaPublicacion} </p>
+                    <p><a class="btn btn-primary" href="vacante?action=ver&id=${vacante.id}" role="button">Ver detalles &raquo;</a></p>
                 </div>
-                <div class="col-lg-4">
-                    <h2>Heading</h2>
-                    <p class="text-danger text-justify">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-                    <p class="text-justify">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <h2>Heading</h2>
-                    <p class="text-danger text-justify">As of v8.0, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-                    <p class="text-justify">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-                    <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-                </div>
+                </c:forEach>>
             </div>
 
             <!-- Site footer -->

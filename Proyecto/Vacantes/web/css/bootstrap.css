@@ -43,7 +43,7 @@ template {
   display: none;
 }
 a {
-  background-color: transparent;
+  background-color: blue;
 }
 a:active,
 a:hover {
@@ -3996,12 +3996,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li.disabled > a {
   color: #777;
 }
-.nav > li.disabled > a:hover,
+
 .nav > li.disabled > a:focus {
   color: #777;
   text-decoration: none;
   cursor: not-allowed;
   background-color: transparent;
+}
+.nav > li.disabled > a:hover{
+    background-color: #204d74;
 }
 .nav .open > a,
 .nav .open > a:hover,
