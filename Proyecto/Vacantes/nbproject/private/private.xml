@@ -4,14 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/model/Vacantes.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/mensaje.jsp</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/model/Usuario.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/controller/VacanteController.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/admin.jsp</file>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/detalle.jsp</file>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/frmvacantes.jsp</file>
-            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/mensaje.jsp</file>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/index.jsp</file>
-            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/controller/VacanteController.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/controller/BuscarController.java</file>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/controller/Homepage.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/controller/AdminController.java</file>
             <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/dao/VacanteDao.java</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/vacantes.jsp</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/web/login.jsp</file>
+            <file>file:/C:/Users/Daniel/OneDrive%20-%20Instituto%20Politecnico%20Nacional/JAVA/Web/Web/Proyecto/Vacantes/src/java/dao/UsuarioDao.java</file>
         </group>
     </open-files>
 </project-private>

@@ -4,7 +4,6 @@
  */
 package controller;
 
-import dao.UsuarioDao;
 import dao.VacanteDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,30 +14,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Usuario;
 import model.Vacantes;
 
 /**
  *
  * @author Daniel
  */
-public class Homepage extends HttpServlet {
+public class BuscarController extends HttpServlet {
 
-
-    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // se guardan las 3 ultimas vacantes
-        List<Vacantes> ultimas = new LinkedList<>();
+        String VacanteAbuscar = request.getParameter("query");
+
         VacanteDao vac = new VacanteDao();
-        ultimas = vac.obtener3Ultimas();
-        
-         RequestDispatcher rd;
-        // compartimos la variable ultimas, para poder acceder la vista con Expression Language
-        request.setAttribute("ultimas", ultimas);
-        // enviamos respuesta, se renderiza a la vista "index.jsp"
-        rd = request.getRequestDispatcher("/index.jsp");
+        List<Vacantes> todas = new LinkedList<>();
+        todas = vac.buscar(VacanteAbuscar);
+
+        RequestDispatcher rd;
+        // compartimos la variable msg, para poder acceder la vista con Expression Language
+        request.setAttribute("todas", todas);
+        // enviamos respuesta, se renderiza a la vista "vacantes.jsp"
+        rd = request.getRequestDispatcher("/vacantes.jsp");
         rd.forward(request, response);
     }
+
 }

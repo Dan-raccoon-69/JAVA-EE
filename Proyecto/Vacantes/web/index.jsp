@@ -32,7 +32,7 @@
                 <h3 class="text-muted">My Company</h3>
                 <nav>
                     <ul class="nav nav-justified">
-                        <li><a href="#">Inicio</a></li>            
+                        <li><a href="homePage">Inicio</a></li>            
                         <li><a href="frmvacantes.jsp">Administración</a></li>                        
                         <li><a href="#">Acerca</a></li>            
                     </ul>
@@ -40,7 +40,7 @@
             </div>
 
             <!-- Formulario para la busqueda. El formulario es enviado por POST al BusquedaController -->    
-            <form method ="post" action="#" class="navbar-form navbar-right">
+            <form method ="post" action="buscar" class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" name="query" required placeholder="Buscar oferta..." class="form-control">
                 </div>        

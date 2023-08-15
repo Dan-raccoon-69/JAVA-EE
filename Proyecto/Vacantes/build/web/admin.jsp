@@ -1,3 +1,9 @@
+<%-- 
+    Document   : admin
+    Created on : 15 ago 2023, 13:19:31
+    Author     : Daniel
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,10 +44,10 @@
           <h3 class="panel-title">Bienvenido </h3>          
         </div>
         <div class="panel-body">
-          <h2 class="panel-title"><b>Username</b><br> username<br><br></h2>
-          <h2 class="panel-title"><b>Email</b><br> email<br><br></h2>
-          <h2 class="panel-title"><b>Perfil</b><br> tipo usuario<br><br></h2>
-          <h2 class="panel-title"><b>Estatus</b><br>estatus<br><br></h2>
+          <h2 class="panel-title"><b>Username</b><br> ${u1.username} <br><br></h2>
+          <h2 class="panel-title"><b>Email</b><br> ${u1.email} <br><br></h2>
+          <h2 class="panel-title"><b>Perfil</b><br> ${u1.perfil} <br><br></h2>
+          <h2 class="panel-title"><b>Estatus</b><br> ${u1.estatus} <br><br></h2>
         </div>
       </div>
 
@@ -54,3 +60,4 @@
 
   </body>
 </html>
+

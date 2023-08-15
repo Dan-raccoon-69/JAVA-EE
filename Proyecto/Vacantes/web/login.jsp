@@ -1,3 +1,10 @@
+<%-- 
+    Document   : login
+    Created on : 15 ago 2023, 13:05:02
+    Author     : Daniel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,37 +14,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-
     <title>Ingresar como Administrador</title>
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="css/signin.css" rel="stylesheet">
-
   </head>
 
   <body>
-
     <div class="container">
         <center>
           <img src="images/lock.png"><br>
+          <!-- Custom styles for this template 
           <h4>Demo</h4>        
           <h5>User: itinajero</h5>
           <h5>Pass: admin1234</h5>
+          -->
         </center>        
-        <form class="form-signin" method="post" action="#">
+        <form class="form-signin" method="post" action="admin">
         <h2 class="form-signin-heading">Ingreso al sistema</h2>
         <label for="user" class="sr-only">Nombre de usuario</label>
         <input type="text" id="user" name="user" class="form-control" placeholder="Escriba nombre de usuario" required autofocus>
         <label for="pass" class="sr-only">Password</label>
         <input type="password" id="pass" name="pass" class="form-control" placeholder="Escriba su password" required>       
-        <p class="text-danger">Mensaje - Error</p>
+        <p class="text-danger"> ${mensaje} </p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       </form>
-
     </div> <!-- /container -->
-
   </body>
 </html>

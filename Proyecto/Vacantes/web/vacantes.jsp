@@ -32,13 +32,13 @@
         <h3 class="text-muted">My Company</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="#">Inicio</a></li>            
-            <li><a href="#">Administración</a></li>                        
+            <li><a href="homePage">Inicio</a></li>            
+            <li><a href="frmvacantes.jsp">Administración</a></li>                        
             <li><a href="#">Acerca</a></li>            
           </ul>
         </nav>
       </div>
-      <form method ="post" action="#" class="navbar-form navbar-right">
+      <form method ="post" action="buscar" class="navbar-form navbar-right">
         <div class="form-group">
           <input type="text" name="query" required placeholder="Buscar oferta..." class="form-control">
         </div>        
@@ -70,29 +70,8 @@
                     <a class="btn btn-default" href="vacante?action=ver&id=${vacantes.id}" role="button">Ver Detalles</a>                                                    
                     <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
                   </td> 
-                  
                 </tr>
                 </c:forEach>>
-                 <!--
-                <tr>
-                  <td class="left">My id</td>
-                  <td>Nombre vacante</td>
-                  <td>fecha</td>
-                  <td>
-                    <a class="btn btn-default" href="#" role="button">Ver Detalles</a>                                                    
-                    <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
-                  </td>  
-                </tr>
-                <tr>
-                  <td class="left">My id</td>
-                  <td>Nombre vacante</td>
-                  <td>fecha</td>
-                  <td>
-                    <a class="btn btn-default" href="#" role="button">Ver Detalles</a>                                                    
-                    <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
-                  </td>  
-                </tr>
-                 -->
             </tbody>           
           </table>
         </div>

@@ -122,4 +122,30 @@ public class VacanteDao {
             return null;
         }
     }
+    
+    
+    public List<Vacantes> buscar(String vacanteAbuscar) {
+        try {
+            Connection conn = getConnection();
+            String sql = "select * from vacante where (descripcion like ? or nombre like ?) order by id desc;";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,"%"+vacanteAbuscar+"%");
+            ps.setString(2,"%"+vacanteAbuscar+"%");
+            rs = ps.executeQuery();
+            List<Vacantes> vacantesEncontradas = new LinkedList<>();
+            Vacantes vacante;
+            while (rs.next()) {
+                vacante = new Vacantes(rs.getInt("id"));
+                vacante.setNombre(rs.getString("nombre"));
+                vacante.setDescripcion(rs.getString("descripcion"));
+                vacante.setFechaPublicacion(rs.getDate("fechaPublicacion"));
+                vacante.setDetalle(rs.getString("detalle"));
+                vacantesEncontradas.add(vacante);
+            }
+            return vacantesEncontradas;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
 }
