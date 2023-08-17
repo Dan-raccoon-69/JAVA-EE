@@ -42,12 +42,57 @@ public class AdminController extends HttpServlet {
             session.setAttribute("u1", u1);
             rd = request.getRequestDispatcher("/admin.jsp");
             rd.forward(request, response);
-        }else {
+        } else {
             mensaje = "Usuario y/o Contraseña incorrectos";
             request.setAttribute("mensaje", mensaje);
             rd = request.getRequestDispatcher("/login.jsp");
             rd.forward(request, response);
         }
 
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String action = request.getParameter("action");
+        // se recupera la session activa que viene junto con el request
+        HttpSession session = request.getSession();
+        RequestDispatcher rd;
+        String mensaje = "";
+
+        switch (action) {
+            case "login":
+                // si no hay usuario, osea null, se va a dirigir hacia el login
+                if (session.getAttribute("u1") == null) {
+                    request.setAttribute("mensaje", mensaje);
+                    rd = request.getRequestDispatcher("/login.jsp");
+                    rd.forward(request, response);
+                } else {
+                    // significa que si hay un usuario y simplmente se redirige a admin.jsp
+                    rd = request.getRequestDispatcher("/admin.jsp");
+                    rd.forward(request, response);
+                }
+                break;
+            case "logout":
+                // Salir, cerramos la session
+                session.invalidate();
+                response.sendRedirect(request.getContextPath() + "/homePage");
+                break;
+            case "crear":
+                // si no hay usuario, osea null, se va a dirigir hacia el login
+                if (session.getAttribute("u1") == null) {
+                    mensaje = "Acceso Denegado.";
+                    request.setAttribute("mensaje", mensaje);
+                    rd = request.getRequestDispatcher("/login.jsp");
+                    rd.forward(request, response);
+                } else {
+                    // significa que si hay un usuario y simplmente se redirige al formulario para crear la vacante
+                    rd = request.getRequestDispatcher("/frmvacantes.jsp");
+                    rd.forward(request, response);
+                } 
+                break;
+            default:
+                throw new AssertionError();
+        }
     }
 }

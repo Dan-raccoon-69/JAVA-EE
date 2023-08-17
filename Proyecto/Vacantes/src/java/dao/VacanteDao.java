@@ -148,4 +148,19 @@ public class VacanteDao {
             return null;
         }
     }
+    
+    public int borrarVacante(int idVacante){
+        String sql = "delete from vacante where id=?";
+        try {
+            Connection conn = getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,idVacante);
+            // ExecuteUpdate se utiliza para insertar, eliminar o modificar
+            int r = ps.executeUpdate();
+            return r;
+        } catch (SQLException ex) {
+            System.out.println("Error VacanteDao.eliminar" + ex.getMessage());
+            return 0;
+        }
+    }
 }

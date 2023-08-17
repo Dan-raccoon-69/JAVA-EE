@@ -16,10 +16,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/justified-nav.css" rel="stylesheet">
-    <!--
     <script src='tinymce/tinymce.min.js'></script>
     <script>
-
       tinymce.init({
         selector: '#detalle',
         plugins: "textcolor, table",
@@ -28,9 +26,7 @@
                   aligncenter alignjustify  | bullist numlist outdent indent | link | print | \n\
                   fontselect fontsizeselect forecolor backcolor",
       });
-
     </script>
-    -->
   </head>
 
   <body>
@@ -43,7 +39,7 @@
         <nav>
           <ul class="nav nav-justified">
             <li><a href="frmvacantes.jsp">Crear Vacante</a></li>            
-            <li><a href="vacantes.jsp">Vacantes</a></li>                        
+            <li><a href="vacante?action=vertodas">Vacantes</a></li>                        
             <li><a href="homePage">Salir</a></li>            
           </ul>
         </nav>

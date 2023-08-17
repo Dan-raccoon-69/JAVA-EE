@@ -33,7 +33,7 @@
         <nav>
           <ul class="nav nav-justified">
             <li><a href="homePage">Inicio</a></li>            
-            <li><a href="frmvacantes.jsp">Administración</a></li>                        
+            <li><a href="admin?action=login">Administración</a></li>                        
             <li><a href="#">Acerca</a></li>            
           </ul>
         </nav>
@@ -67,8 +67,10 @@
                   <td>${vacantes.nombre}</td>
                   <td>${vacantes.fechaPublicacion}</td>
                   <td>
-                    <a class="btn btn-default" href="vacante?action=ver&id=${vacantes.id}" role="button">Ver Detalles</a>                                                    
-                    <a class="btn btn-default" href="#" role="button">Eliminar</a>                         
+                    <a class="btn btn-default" href="vacante?action=ver&id=${vacantes.id}" role="button">Ver Detalles</a>  
+                    <c:if test="${u1.id > 0}" >
+                    <a class="btn btn-default" href="#" role="button">Eliminar</a>
+                    </c:if>
                   </td> 
                 </tr>
                 </c:forEach>>
