@@ -34,7 +34,7 @@
                     <ul class="nav nav-justified">
                         <li><a href="homePage">Inicio</a></li>            
                         <li><a href="admin?action=login">Administración</a></li>                        
-                        <li><a href="#">Acerca</a></li>            
+                        <li><a href="acerca.jsp">Acerca</a></li>            
                     </ul>
                 </nav>
             </div>

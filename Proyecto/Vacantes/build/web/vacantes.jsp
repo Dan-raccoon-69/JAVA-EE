@@ -69,7 +69,7 @@
                   <td>
                     <a class="btn btn-default" href="vacante?action=ver&id=${vacantes.id}" role="button">Ver Detalles</a>  
                     <c:if test="${u1.id > 0}" >
-                    <a class="btn btn-default" href="#" role="button">Eliminar</a>
+                    <a class="btn btn-default" href="admin?action=eliminar&idVacante=${vacantes.id}" role="button">Eliminar</a>
                     </c:if>
                   </td> 
                 </tr>

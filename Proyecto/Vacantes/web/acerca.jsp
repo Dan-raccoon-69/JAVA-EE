@@ -1,3 +1,10 @@
+<%-- 
+    Document   : acerca
+    Created on : 17 ago 2023, 23:32:34
+    Author     : Daniel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,9 +32,9 @@
         <h3 class="text-muted">My Company</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="#">Inicio</a></li>            
-            <li><a href="#">Administración</a></li>                        
-            <li><a href="#">Acerca</a></li>            
+            <li><a href="homePage">Inicio</a></li>            
+            <li><a href="admin?action=login">Administración</a></li>                        
+            <li><a href="acerca.jsp">Acerca</a></li>            
           </ul>
         </nav>
       </div>

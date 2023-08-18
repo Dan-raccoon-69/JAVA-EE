@@ -38,9 +38,9 @@
         <h3 class="text-muted">My Company - Administración</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="frmvacantes.jsp">Crear Vacante</a></li>            
+            <li><a href="admin?action=crear">Crear Vacante</a></li>            
             <li><a href="vacante?action=vertodas">Vacantes</a></li>                        
-            <li><a href="homePage">Salir</a></li>            
+            <li><a href="admin?action=logout">Salir</a></li>            
           </ul>
         </nav>
       </div>

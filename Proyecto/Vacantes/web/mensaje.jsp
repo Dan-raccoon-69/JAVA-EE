@@ -32,9 +32,9 @@
         <h3 class="text-muted">My Company - Administración</h3>
         <nav>
           <ul class="nav nav-justified">
-            <li><a href="frmvacantes.jsp">Crear Vacante</a></li>            
-            <li><a href="vacantes.jsp">Vacantes</a></li>                        
-            <li><a href="#">Salir</a></li>            
+            <li><a href="admin?action=crear">Crear Vacante</a></li>            
+            <li><a href="admin?action=login">Vacantes</a></li>                        
+            <li><a href="admin?action=logout">Salir</a></li>            
           </ul>
         </nav>
       </div>
