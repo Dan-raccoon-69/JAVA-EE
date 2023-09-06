@@ -7,8 +7,7 @@ import java.util.Date;
  * @author Daniel
  */
 public class Persona {
-    
-    private int id_persona;
+
     private String curp;
     private String nombre;
     private String apellido;
@@ -16,22 +15,13 @@ public class Persona {
     private String direccion;
     private Date fecha_nacimiento;
 
-    public Persona(int id_persona, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
-        this.id_persona = id_persona;
+    public Persona(String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
         this.curp = curp;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
         this.fecha_nacimiento = fecha_nacimiento;
-    }
-
-    public int getId_persona() {
-        return id_persona;
-    }
-
-    public void setId_persona(int id_persona) {
-        this.id_persona = id_persona;
     }
 
     public String getCurp() {
