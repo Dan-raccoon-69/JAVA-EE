@@ -1,8 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -10,7 +12,7 @@ import javax.persistence.OneToOne;
  * @author Daniel
  */
 @Entity
-public class Odontologo extends Persona{
+public class Odontologo extends Persona implements Serializable{
     //private int id_odontologo;
     private String especialidad;
     // Relaciones 1 a 1 se hacen mediante instancias - creaciones de objetos 
@@ -23,12 +25,12 @@ public class Odontologo extends Persona{
     private Horario unHorario;
     // Relaciones 1 a n se hacen mediante collections de objetos
     // (un paciente tiene n turnos)
-    //@OneToMany
+    @OneToMany (mappedBy="odonto")
+    // va a ir a la clase turno y buscara algo que se llame "turn" 
     private List <Turno> listaTurnos;
 
-    public Odontologo(String especialidad, Usuario unUsuario, Horario unHorario, List<Turno> listaTurnos, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
-        super(curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
-        //this.id_odontologo = id_odontologo;
+    public Odontologo(String especialidad, Usuario unUsuario, Horario unHorario, List<Turno> listaTurnos, int id, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
+        super(id, curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
         this.especialidad = especialidad;
         this.unUsuario = unUsuario;
         this.unHorario = unHorario;

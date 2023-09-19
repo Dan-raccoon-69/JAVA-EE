@@ -1,28 +1,32 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Daniel
  */
 @Entity
-public class Paciente extends Persona {
+public class Paciente extends Persona implements Serializable {
     //private int id_paciente;
     private String tiene_OS;
     private String tipoSangre;
     // Relaciones 1 a 1 se hacen mediante instancias - creaciones de objetos 
     // (un paciente tiene 1 responsable)
+    @OneToOne
     private Responsable unResponsable;
     // Relaciones 1 a n se hacen mediante collections de objetos
     // (un paciente tiene n turnos)
+    @OneToMany(mappedBy="pacien")
     private List <Turno> listaTurnos;
 
-    public Paciente(String tiene_OS, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
-        super(curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
-        //this.id_paciente = id_paciente;
+    public Paciente(String tiene_OS, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, int id, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
+        super(id, curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
         this.tiene_OS = tiene_OS;
         this.tipoSangre = tipoSangre;
         this.unResponsable = unResponsable;

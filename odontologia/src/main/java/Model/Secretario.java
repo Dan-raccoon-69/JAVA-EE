@@ -2,6 +2,7 @@ package Model;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -13,11 +14,11 @@ public class Secretario extends Persona{
     private String sector;
     // Relaciones 1 a 1 se hacen mediante instancias - creaciones de objetos 
     // (un secretario tiene 1 usuario)
+    @OneToOne
     private Usuario unUsuario;
 
-    public Secretario(String sector, Usuario unUsuario, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
-        super(curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
-        //this.id_secretario = id_secretario;
+    public Secretario(String sector, Usuario unUsuario, int id, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
+        super(id, curp, nombre, apellido, telefono, direccion, fecha_nacimiento);
         this.sector = sector;
         this.unUsuario = unUsuario;
     }

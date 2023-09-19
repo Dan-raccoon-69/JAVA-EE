@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
-public class Persona {
+public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -38,13 +39,22 @@ public class Persona {
     @Temporal(TemporalType.DATE)
     private Date fecha_nacimiento;
 
-    public Persona(String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
+    public Persona(int id, String curp, String nombre, String apellido, String telefono, String direccion, Date fecha_nacimiento) {
+        this.id = id;
         this.curp = curp;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
         this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getCurp() {
