@@ -26,7 +26,8 @@ public class UsuarioDao {
     private Connection getConnection() {
         Connection conexion = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("n | SQLException e) {\n" +
+"            System.out.println(e.getcom.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(url, usuario, contraseña);
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());

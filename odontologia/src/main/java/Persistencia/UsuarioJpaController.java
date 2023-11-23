@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Persistencia;
 
 import Model.Usuario;
@@ -31,8 +27,6 @@ public class UsuarioJpaController implements Serializable {
         return emf.createEntityManager();
     }
     
-    // contructor que nos servira para realizar las operaciones de un CRUD de este JPA Controller 
-    // y crea instancias en la entityManagerFactory
     public UsuarioJpaController() {
         emf = Persistence.createEntityManagerFactory("ConsultorioOdontologico_PU");
     }
